@@ -6,7 +6,11 @@
     <title>Home</title>
 </head>
 <body>
-    
+   <ul> 
+    <li> <a href="#" >Ministry</a> </li>
+    <li><a href="#">Accounts</a></li>
+    <li><a href="#" >Docoment</a></li> 
+</ul>
 
 </body>
 </html>
