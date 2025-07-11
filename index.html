@@ -8,9 +8,10 @@
 <body>
     
     <div class="login">
-    <form>
-    <input type ="text"  id="uname" class ="uname"placeholder="User name">
-    <input typr="password" id="password" class ="password" placeholder="Password">
+    <form method="POST" acton="login.php">
+    <label>Login </label><br>   
+    <input type ="text"  id="uname" class ="uname"placeholder="User name" required><br><br>
+    <input typr="password" id="password" class ="password" placeholder="Password" required><br><br>
     <button type="submit" id="submit">Login</button> 
     </form>
     </div>
