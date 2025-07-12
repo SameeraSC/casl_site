@@ -28,7 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 // ✅ Successful login
                 $_SESSION['userid'] = $user['userid'];
                 $_SESSION['fname'] = $user['fname'];
+                $_SESSION['lname'] = $user['lname'];
                 $_SESSION['type'] = $user['type'];
+                
 
                 echo "<p style='color:green;'>✅ Login successful. Welcome, {$user['fname']}!</p>";
 
