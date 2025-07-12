@@ -60,6 +60,14 @@ if(!empty($_POST['fname']) && !empty($_POST['lname']) && !empty($_POST['userid']
     <input type="text" name="userid" id="userid" placeholder="User Name"><br>
     <input type="password" name="password" id="password" placeholder="Password"><br>
     <select id="type">
+
+<option value="pastor">Pastor</option>
+<option value="admin">Admin</option>
+<option value="ass_admin">Assistant Admin</option>
+<option value="res_manager">Resource Manager</option>
+<option value="doc_staff">Document Staff</option>
+<option value="data_staff">Data Enrty Staff</option>
+<option value="Guest">Guest</option>
 </select>
     <input type="submit" name="submit" value="submit" >
 <form>
