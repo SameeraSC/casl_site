@@ -32,9 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                 echo "<p style='color:green;'>✅ Login successful. Welcome, {$user['fname']}!</p>";
 
-                // Optional: redirect to home or dashboard
-                // header("Location: home.php");
-                // exit;
+               
+                 header("Location: home.php");
+                 exit;
 
             } else {
                 echo "<p style='color:red;'>❌ Incorrect password.</p>";
@@ -44,10 +44,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             echo "<p style='color:red;'>❌ User not found.</p>";
         }
 
-    } else {
+    
+} } else {
         echo "<p style='color:red;'>❗ Please fill in both fields.</p>";
     }
-}
 ?>
 
  
