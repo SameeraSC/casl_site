@@ -1,10 +1,16 @@
 <?php
-include_once 'dbconn.php';
+session_start();
 
-$userid; $password;
+require 'dbconn.php';
 
-$userid=$_POST['userid'];
-$password=$_POST['password'];
+
+$userid = $_POST['userid'];
+$password= $_POST['password'];
+
+ 
+
+
+
 
 
 
