@@ -2,14 +2,12 @@
 session_start();
 if(!isset($_SESSION['userid']) || ($_SESSION['type']!=="admin")){
    echo "<div style='text-align:center; margin-top:100px;'>
-        <h2 style='color:red; text-align:center;'> Access Denied. You do not have permission.</h2>
-         <a href='index.html' style='color:blue; text-decoration:none;'>🔙 Go Back to Login Page</a>
+     <h2 style='color:red; text-align:center;'> Access Denied. You do not have permission.</h2>
+        <a href='index.html' style='color:blue; text-decoration:none;'>🔙 Go Back to Login Page</a>
       </div>";
 exit;
 
 }
-
-
 require 'dbconn.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
