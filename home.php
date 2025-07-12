@@ -1,3 +1,15 @@
+
+<?php
+session_start();
+if(!isset($_SESSION['userid'])){
+   echo "<div style='text-align:center; margin-top:100px;'>
+     <h2 style='color:red; text-align:center;'> Access Denied. You do not have permission.</h2>
+        <a href='index.html' style='color:blue; text-decoration:none;'>🔙 Go Back to Login Page</a>
+      </div>";
+exit;}
+include 'navbar.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +18,8 @@
     <title>Home</title>
 </head>
 <body>
-   <ul> 
-    <li> <a href="#">Ministry</a> </li>
-    <li><a href="#">Accounts</a></li>
-    <li><a href="#">Documents</a></li>
-    <li><a href="adduser.php">Admin</a></li>
 
-</ul>
+<h1>HOME<h1>
 
 </body>
 </html>
