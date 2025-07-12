@@ -1,33 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CASL-Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CASL Login</title>
 
-    <style>
-        .login {
- 
-        position: relative;
-        margin-top: 200px;
-        margin-left: 500px;
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-        }
+    body {
+      background: #f5f7fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      margin: 0;
+    }
 
-    </style>
+    .login-box {
+      background-color: #fff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-box img {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      color: #2e0761;
+    }
+
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: border-color 0.2s ease-in-out;
+    }
+
+    .login-box input[type="text"]:focus,
+    .login-box input[type="password"]:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    .login-box input[type="submit"] {
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-box input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 500px) {
+      .login-box {
+        margin: 20px;
+        padding: 30px 20px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-    
-    <div class="login">
-    
-    <label style="text-decoration: double; ">Login </label><br>
+
+  <div class="login-box">
+    <img src="uploads/logo.png" alt="CASL Logo" />
+    <h2>Login</h2>
     <form method="post" action="login.php">
-    <input type="text" name="userid" placeholder="User ID" required><br>
-    <input type="password" name="password" placeholder="Password" required><br>
-   <input type="submit" name="login" value="Login">
+      <input type="text" name="userid" placeholder="User ID" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <input type="submit" name="login" value="Login" />
     </form>
-    </div>
+  </div>
 
 </body>
 </html>
