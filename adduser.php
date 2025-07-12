@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['userid']) || ($_SESSION['type']!=="admin")){
+if(!isset($_SESSION['userid']) && isset($_SESSION['type']) && isset($_SESSION['fname']) && isset($_SESSION['lname']) && ($_SESSION['type']!=="admin")){
    echo "<div style='text-align:center; margin-top:100px;'>
      <h2 style='color:red; text-align:center;'> Access Denied. You do not have permission.</h2>
         <a href='index.html' style='color:blue; text-decoration:none;'>🔙 Go Back to Login Page</a>
@@ -9,7 +9,7 @@ exit;
 
 }
 require 'dbconn.php';
-
+include 'navbar.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if (
@@ -18,7 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         !empty(trim($_POST['userid'])) &&
         !empty(trim($_POST['password'])) &&
         !empty(trim($_POST['type']))
-    ) {
+    ) 
+    
+    {
        
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
@@ -42,13 +44,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
    
-} } else {
-        echo "<p style='color:red;'>❗ Please fill in all required fields.</p>";
-    }
+    } 
+}  
 ?>
-
- 
-
 
 <!DOCTYPE html>
 <html lang="en">
