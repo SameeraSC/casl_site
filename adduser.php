@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 if(!isset($_SESSION['userid']) && isset($_SESSION['type']) && isset($_SESSION['fname']) && isset($_SESSION['lname']) && ($_SESSION['type']!=="admin")){
    echo "<div style='text-align:center; margin-top:100px;'>
@@ -198,35 +203,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="user-list">
      
     <?php
-$sql = "SELECT fname, lname, type FROM user ORDER BY id DESC";
-$result = $conn->query($sql);
+        $sql = "SELECT fname, lname, type FROM user ORDER BY userid DESC";
+        $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-    $allRows = $result->fetch_all(MYSQLI_ASSOC);
-    echo "<pre>";
-    print_r($allRows);
-    echo "</pre>";
+        if ($result->num_rows > 0) {
+            $allRows = $result->fetch_all(MYSQLI_ASSOC);
+            
+            foreach ($allRows as $row) {
+                $fullName = htmlspecialchars($row['fname'] . ' ' . $row['lname']);
+                $utype = htmlspecialchars($row['type']);
 
-    foreach ($allRows as $row) {
-        $fullName = htmlspecialchars($row['fname'] . ' ' . $row['lname']);
-        $utype = htmlspecialchars($row['type']);
-
-        echo "
-        <div class='user-card'>
-            <img src='uploads/default-avatar.png' alt='Profile'>
-            <div class='user-info'>
-                <h5>{$fullName}</h5>
-                <p>{$utype}</p>
-            </div>
-        </div>";
-    }
-} else {
-    echo "<p>No users found.</p>";
-}
-
+                echo "
+                <div class='user-card'>
+                    <img src='uploads/default-avatar.png' alt='Profile'>
+                    <div class='user-info'>
+                        <h5>{$fullName}</h5>
+                        <p>{$utype}</p>
+                    </div>
+                </div>";
+            }
+        } else {
+            echo "<p>No users found.</p>";
+        }
+    ?>
     
-  </div>
+</div>
 
 </body>
 </html>
-
