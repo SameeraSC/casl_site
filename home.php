@@ -10,7 +10,7 @@
     <li> <a href="#">Ministry</a> </li>
     <li><a href="#">Accounts</a></li>
     <li><a href="#">Documents</a></li>
-    <li><a href="#">Admin</a></li>
+    <li><a href="adduser.php">Admin</a></li>
 
 </ul>
 
