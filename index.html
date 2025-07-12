@@ -20,11 +20,12 @@
 <body>
     
     <div class="login">
-    <form method="POST" acton="login.php">
-    <label style="text-decoration: double; ">Login </label><br>  
-    <input type ="text"  id="userid" class ="userid"placeholder="User name" required><br><br>
-    <input typr="password" id="password" class ="password" placeholder="Password" required><br><br>
-    <button type="submit" id="submit">Login</button> 
+    
+    <label style="text-decoration: double; ">Login </label><br>
+    <form method="post" action="login.php">
+    <input type="text" name="userid" placeholder="User ID" required><br>
+    <input type="password" name="password" placeholder="Password" required><br>
+   <input type="submit" name="login" value="Login">
     </form>
     </div>
 
